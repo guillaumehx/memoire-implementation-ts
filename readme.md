@@ -3,7 +3,7 @@
 
 Le programme TypeScript s'exécute facilement en ligne de commande.
 
-Le programme TypeScript est disponible dans StackBlitz pour plus de facilité : https://stackblitz.com/~/github.com/guillaumehx/memoire-implementation-ts . Consultez n'importe quelle partie exécution pour savoir quelles commandes lancer (```ts-node src/main.ts "<ARGUMENT>"```).
+Le programme TypeScript est disponible dans StackBlitz pour plus de facilité : https://stackblitz.com/~/github.com/guillaumehx/memoire-implementation-ts . Consultez n'importe quelle partie exécution pour savoir quelles commandes lancer (```ts-node src/main.ts "<EXPRESSION_ARITHMETIQUE>"```).
 
 Sans StackBlitz, il faut télécharger ou cloner le dépôt. Deux options sont possibles :
 - Cliquer sur le bouton vert en haut à droite ```<> Code``` puis ```Download ZIP```.
