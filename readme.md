@@ -3,7 +3,9 @@
 
 Le programme TypeScript s'exécute facilement en ligne de commande.
 
-La première étape consiste à télécharger ou cloner le dépôt. Deux options sont possibles :
+Le programme TypeScript est disponible dans StackBlitz pour plus de facilité : https://stackblitz.com/~/github.com/guillaumehx/memoire-implementation-ts . Consultez n'importe quelle partie exécution pour savoir quelles commandes lancer (```ts-node src/main.ts "<ARGUMENT>"```).
+
+Sans StackBlitz, il faut télécharger ou cloner le dépôt. Deux options sont possibles :
 - Cliquer sur le bouton vert en haut à droite ```<> Code``` puis ```Download ZIP```.
 - Ou utiliser git : ``` git clone https://github.com/guillaumehx/memoire-implementation-ts.git ```
 
