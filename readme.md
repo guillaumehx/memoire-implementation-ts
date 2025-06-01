@@ -1,4 +1,4 @@
-
+![Build](https://github.com/guillaumehx/memoire-implementation-ts/actions/workflows/typescript.yml/badge.svg)
 # Implémentation TypeScript
 
 Le programme TypeScript s'exécute facilement en ligne de commande.
