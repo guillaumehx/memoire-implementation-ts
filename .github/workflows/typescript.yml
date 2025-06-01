@@ -1,4 +1,4 @@
-name: Test ts-node sur Linux et macOS
+name: npm install test
 
 on:
   push:
@@ -6,14 +6,14 @@ on:
 
 jobs:
   test-linux:
-    name: Test sur Ubuntu
+    name: Ubuntu
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Installer Node.js et npm
+      - name: Install Node.js et npm
         run: |
           sudo apt update
           sudo apt install nodejs
@@ -21,48 +21,48 @@ jobs:
           node -v
           npm -v
 
-      - name: Installer ts-node et typescript globalement
+      - name: Install ts-node and typescript globally
         run: |
           sudo apt install ts-node
           ts-node -v
 
-      - name: Installer les dépendances du projet
+      - name: Install deps
         run: npm i
 
       - name: Tests
         run: npm test
 
-      - name: Exécuter ts-node avec des expressions
+      - name: ts-node
         run: ts-node src/main.ts "6+2*(10/5)" "2+2" "8-5^2"
 
   test-macos:
-    name: Test sur macOS
+    name: macOS
     runs-on: macos-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Installation de Node.js v22
+      - name: Install Node.js v22
         uses: actions/setup-node@v4
         with:
           node-version: '22'
 
-      - name: Vérifier les versions Node.js et npm
+      - name: Verify versions Node.js npm
         run: |
           node -v
           npm -v
 
-      - name: Installer ts-node et typescript globalement
+      - name: Install ts-node and typescript globally
         run: |
           npm install -g ts-node typescript
           ts-node -v
 
-      - name: Installer les dépendances du projet
+      - name: Install deps
         run: npm i
 
       - name: Tests
         run: npm test
 
-      - name: Exécuter ts-node avec des expressions
+      - name: ts-node
         run: ts-node src/main.ts "6+2*(10/5)" "2+2" "8-5^2"

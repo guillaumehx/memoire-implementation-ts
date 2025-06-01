@@ -12,6 +12,13 @@ describe('Calculator', () => {
         expect(calculator.compute("2 + 4 * 10 ^ 2 / 16 - 3")).toBe(24);
     });
 
+    it('should compute implicit multiplication expressions', () => {
+        expect(calculator.compute("6 + (3+1)(2+2)")).toBe(22);
+        expect(calculator.compute("(2+3)(4+1)")).toBe(25);
+        expect(calculator.compute("3(5)")).toBe(15);
+        expect(calculator.compute("(5)3+3")).toBe(18);
+    });
+
     it('should compute expressions with parentheses', () => {
         expect(calculator.compute("(2 + 1) * (8 / 2) / (18 * 2)")).toBeCloseTo(0.333, 2);
         expect(calculator.compute("(2 + (4 - 3)) * (10 / 5)")).toBe(6);

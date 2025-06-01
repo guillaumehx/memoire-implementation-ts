@@ -6,12 +6,10 @@ export class ShuntingYard {
 
     static infixToRPN(expression: string): (string | number)[] {
         
+        expression = this.preprocess(expression);
+        
         const outputQueue: (string | number)[] = [];
         const operatorStack: string[] = [];
-
-        expression = expression.replace(/\s+/g, '');
-        expression = expression.replace(/(\d+)\(/g, '$1*(');
-        expression = expression.replace(/\)(\d+)/g, ')*$1');
 
         const tokens = expression.match(/\d+|\+|\-|\*|\/|\^|\(|\)/g);
         if (!tokens) {
@@ -47,5 +45,13 @@ export class ShuntingYard {
         }
 
         return outputQueue;
+    }
+
+    private static preprocess(expression: string): string {
+        return expression
+            .replace(/\s+/g, '')
+            .replace(/(\d)(\()/g, '$1*$2')
+            .replace(/(\))(\d)/g, '$1*$2')
+            .replace(/(\))(\()/g, '$1*$2');
     }
 }
